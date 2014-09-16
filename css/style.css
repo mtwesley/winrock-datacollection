@@ -1,0 +1,220 @@
+@font-face {
+    font-family: "Thin";
+    src: url("../fonts/Titillium-Thin.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Light";
+    src: url("../fonts/Titillium-Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Regular";
+    src: url("../fonts/Titillium-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Semibold";
+    src: url("../fonts/Titillium-Semibold.otf") format("opentype");
+}
+
+body {
+    margin: 0;
+    padding: 20px 30px;
+    min-width: 1000px;
+    font-family: "Light", Helvetica;
+    font-size: 18px;
+    color: #333;
+    border-top: 3px solid #111;
+}
+
+/** Fonts **/
+
+.font-thin { font-family: "Thin" }
+.font-light { font-family: "Light" }
+.font-regular { font-family: "Regular" }
+.font-semibold { font-family: "Semibold" }
+
+
+/** Layout **/
+
+#header {
+    height: 60px;
+    clear: both;
+}
+
+#header .title {
+    float: left;
+    font-family: "Semibold", Helvetica;
+    font-size: 40px;
+}
+
+#header .subtitle {
+    float: left;
+    font-family: "Thin", Helvetica;
+    font-size: 40px;
+}
+
+#navigation {
+    margin: 5px 0 0 50px;
+    padding: 0;
+    list-style: none;
+    float: left;
+}
+
+#navigation li {
+    padding: 0;
+    list-style: none;
+    display: inline;
+}
+
+#navigation li a,
+#navigation li a:visited {
+    margin: 3px 10px;
+    padding: 5px 10px;
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+    /* border-bottom: 3px solid transparent; */
+    -moz-border-radius: 5px;
+    border-radius: 5px;    
+}
+
+#navigation li a:hover {
+    background-color: #efefef;
+    /* border-bottom: 3px solid #888; */
+}
+
+#indicators {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#indicators li {
+    margin: 0 0 5px;
+    padding: 0;
+    width: 300px;
+    list-style: none;
+    border: 1px solid #111;
+    clear: both;
+    display: inline-block;
+}
+
+#indicators li .indicator-number {
+    margin: 5px 0 5px 5px;
+    padding: 5px 0;
+    width: 35px;
+    float: left;
+    background-color: #111;
+    text-align: center;
+    font-family: "Semibold";
+    color: #fff;
+    display: inline-block;
+}
+
+#indicators li .indicator-title {
+    margin: 0;
+    padding: 5px;
+    width: 250px;
+    display: inline-block;
+    float: left;
+}
+
+#wrapper {}
+
+#content {}
+
+#left {
+    width: 300px;
+    float: left;
+}
+
+#left .title,
+#right .title {
+    margin: 0 0 5px;
+    font-family: "Semibold";
+    font-size: 20px;
+}
+
+#right {
+    margin-left: 10px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+table.fields,
+table.results {
+    display: inline-block;
+    border-spacing: 5px;
+    border-collapse: separate;
+}
+
+table.fields td,
+table.results td {
+    padding: 5px;
+    border: 1px solid #111;
+}
+
+table.fields td {
+    padding-left: 30px;
+}
+
+table.fields td.blank {
+    border-color: transparent;
+}
+
+table.fields td.field {
+    text-align: right;
+}
+
+table.results td {
+    text-align: center;
+}
+
+table.results td.results-year {
+    width: 300px;
+    background-color: #111;
+    color: #fff;
+    font-family: "Semibold";
+}
+
+table.results td.results-month {
+    width: 150px;
+    background-color: #111;
+    color: #fff;
+    font-family: "Semibold";
+}
+
+table.results td.result {
+    width: 150px;
+}
+
+input[type=text],
+input[type=password] {
+    margin: 5px 0;
+    padding: 5px;
+    width: 300px;
+    border: 1px solid #111;
+    font-family: "Light";
+    font-size: 14px;
+    color: #444;
+}
+
+input[type=submit] {
+    margin: 5px 0;
+    padding: 5px 20px;
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    -moz-border-radius: 5px;
+    border-radius: 5px;    
+    background-color: #efefef;
+    font-family: "Semibold";
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+

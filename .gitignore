@@ -1,0 +1,13 @@
+venv
+venvs
+.fake-git
+*.komodoproject
+*.esproj
+.env
+.wsgi
+*.pyc
+.idea
+*.DS_Store
+.webassets-cache
+assets.*
+uploads
