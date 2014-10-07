@@ -7,56 +7,161 @@
         <div id="wrapper">
             <div id="header">
                 <span class="title">Winrock ARCH</span>
-                <span class="subtitle"> &nbsp;// Reports</span>
+                <span class="subtitle winrock-blue"> &nbsp;// Reports</span>
                 <ul id="navigation">
-                    <li><a class="active" href="#">Reports</a></li>
+                    <li><a class="active" href="reports.php">Reports</a></li>
                     <li><a href="#">Profiles</a></li>
                     <li><a href="#">Account</a></li>
                     <li><a href="#">Logout</a></li>
                 </ul>
             </div>
             <div id="content">
-                <div id="left">
-                    <div class="title">Indicators</div>
+                <div id="left" class="red">
+                    <div class="title">
+                        <img class="icon" src="images/education.png" />
+                        Education indicators
+                    </div>
                     <ul id="indicators">
                         <li id="indicator-E1" class="indicator">
-                            <span class="indicator-number">E1</span>
-                            <span class="indicator-title">Number of direct beneficiary children provided education or vocational training services</span>
+                            <a href="#">
+                                <span class="indicator-number">E1</span>
+                                <span class="indicator-title">Number of direct beneficiary children provided education or vocational training services</span>
+                            </a>
                         </li>
                         <li id="indicator-E2" class="indicator">
+                            <a href="#">
                             <span class="indicator-number">E2</span>
                             <span class="indicator-title">Number of children engaged in or at high-risk of entering child labor enrolled in formal education services</span>
+                            </a>
                         </li>
                         <li id="indicator-E3" class="indicator">
+                            <a href="#">
                             <span class="indicator-number">E3</span>
                             <span class="indicator-title">Number of children engaged in or at high-risk of entering child labor enrolled in non-formal education services</span>
+                            </a>
                         </li>
                         <li id="indicator-E4" class="indicator">
+                            <a href="#">
                             <span class="indicator-number">E4</span>
                             <span class="indicator-title">Number of children engaged in or at high-risk of entering child labor enrolled in vocational services</span>
-                        </li>
-                        <li id="indicator-L1" class="indicator">
-                            <span class="indicator-number">L1</span>
-                            <span class="indicator-title">Number of households receiving livelihood services</span>
-                        </li>
-                        <li id="indicator-L2" class="indicator">
-                            <span class="indicator-number">L2</span>
-                            <span class="indicator-title">Number of adults (18 and over) provided with employment services</span>
-                        </li>
-                        <li id="indicator-L3" class="indicator">
-                            <span class="indicator-number">L3</span>
-                            <span class="indicator-title">Number of children (16-17) provided with employment services</span>
-                        </li>
-                        <li id="indicator-L4" class="indicator">
-                            <span class="indicator-number">L4</span>
-                            <span class="indicator-title">Number of individuals provided with economic strengthening services</span>
-                        </li>
-                        <li id="indicator-L5" class="indicator">
-                            <span class="indicator-number">L5</span>
-                            <span class="indicator-title">Number of individuals provided with services other than employment and economic strengthening</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
+                <div id="left" class="green">
+                    <div class="title">
+                        <img class="icon" src="images/livelihood.png" />
+                        Livelihood indicators
+                    </div>
+                    <ul id="indicators">
+                        <li id="indicator-L1" class="indicator">
+                            <a href="#">
+                            <span class="indicator-number">L1</span>
+                            <span class="indicator-title">Number of households receiving livelihood services</span>
+                            </a>
+                        </li>
+                        <li id="indicator-L2" class="indicator">
+                            <a href="#">
+                            <span class="indicator-number">L2</span>
+                            <span class="indicator-title">Number of adults (18 and over) provided with employment services</span>
+                            </a>
+                        </li>
+                        <li id="indicator-L3" class="indicator">
+                            <a href="#">
+                            <span class="indicator-number">L3</span>
+                            <span class="indicator-title">Number of children (16-17) provided with employment services</span>
+                            </a>
+                        </li>
+                        <li id="indicator-L4" class="indicator">
+                            <a href="#">
+                            <span class="indicator-number">L4</span>
+                            <span class="indicator-title">Number of individuals provided with economic strengthening services</span>
+                            </a>
+                        </li>
+                        <li id="indicator-L5" class="indicator">
+                            <a href="#">
+                            <span class="indicator-number">L5</span>
+                            <span class="indicator-title">Number of individuals provided with services other than employment and economic strengthening</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="left" class="purple">
+                    <div class="title">
+                        <img class="icon" src="images/additional.png" />
+                        Additional indicators
+                    </div>
+                    <ul id="indicators">
+                        <li id="indicator-A1" class="indicator">
+                            <a href="#">
+                            <span class="indicator-number">A1</span>
+                            <span class="indicator-title">Percentage of children in Child Labor</span>
+                            </a>
+                        </li>
+                        <li id="indicator-A2" class="indicator">
+                            <a href="#">
+                            <span class="indicator-number">A2</span>
+                            <span class="indicator-title">Percentage of children in Worst Forms of Child Labor</span>
+                            </a>
+                        </li>
+                        <li id="indicator-A3" class="indicator">
+                            <a href="#">
+                            <span class="indicator-number">A3</span>
+                            <span class="indicator-title">Percentage of children under Hazardous Child Labor</span>
+                            </a>
+                        </li>
+                        <li id="indicator-A4" class="indicator">
+                            <a href="#">
+                            <span class="indicator-number">A4</span>
+                            <span class="indicator-title">Number of children engaged in any form of Child Labor during the past six months</span>
+                            </a>
+                        </li>
+                        <li id="indicator-A5" class="indicator">
+                            <a href="#">
+                            <span class="indicator-number">A5</span>
+                            <span class="indicator-title">Number of children that received any regular form of education during the past six months</span>
+                            </a>
+                        </li>
+                        <li id="indicator-A6" class="indicator">
+                            <a href="#">
+                            <span class="indicator-number">A6</span>
+                            <span class="indicator-title">Percentage of beneficiary children dropping out from formal school</span>
+                            </a>
+                        </li>
+                        <li id="indicator-A7" class="indicator">
+                            <a href="#">
+                            <span class="indicator-number">A7</span>
+                            <span class="indicator-title">Percentage of beneficiary children who complete the school year</span>
+                            </a>
+                        </li>
+                        <li id="indicator-A8" class="indicator">
+                            <a href="#">
+                            <span class="indicator-number">A8</span>
+                            <span class="indicator-title">Percentage of households with increased sources of income</span>
+                            </a>
+                        </li>
+                        <li id="indicator-A9" class="indicator">
+                            <a href="#">
+                            <span class="indicator-number">A9</span>
+                            <span class="indicator-title">Percentage of target households covered by social protection services</span>
+                            </a>
+                        </li>
+                        <li id="indicator-A10" class="indicator">
+                            <a href="#">
+                            <span class="indicator-number">A10</span>
+                            <span class="indicator-title">Percentage of target youth 16-17 years old that are self-employed or employed by third parties</span>
+                            </a>
+                        </li>
+                        <li id="indicator-A11" class="indicator">
+                            <a href="#">
+                            <span class="indicator-number">A11</span>
+                            <span class="indicator-title">Number of target households referred to existing government and non-government social protection programs</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--
                 <div id="right">
                     <div class="title">&nbsp;</div>
                     <table class="fields">
@@ -150,6 +255,7 @@
                         </tr>
                     </table>
                 </div>
+                -->
             </div>
         </div>
     </body>

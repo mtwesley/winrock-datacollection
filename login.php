@@ -7,7 +7,7 @@
         <div id="wrapper">
             <div id="header">
                 <span class="title">Winrock ARCH</span>
-                <span class="subtitle"> &nbsp;// Login</span>
+                <span class="subtitle winrock-blue"> &nbsp;// Login</span>
                 <ul id="navigation"></ul>
             </div>
             <div id="content">
