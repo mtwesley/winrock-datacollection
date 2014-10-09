@@ -1,4 +1,13 @@
-<html>
+<?php
+
+session_start();
+
+if (!$_SESSION['logged_in']) {
+    header("Location: login.php");
+    die();
+}
+
+?><html>
     <head>
         <title>Reports | Winrock ARCH</title>
         <link type="text/css" href="css/style.css" rel="stylesheet" />
@@ -6,13 +15,14 @@
     <body>
         <div id="wrapper">
             <div id="header">
+                <img class="logo" src="images/winrock_logo_trim.png" />
                 <span class="title">Winrock ARCH</span>
                 <span class="subtitle winrock-blue"> &nbsp;// Reports</span>
                 <ul id="navigation">
                     <li><a class="active" href="reports.php">Reports</a></li>
                     <li><a href="#">Profiles</a></li>
                     <li><a href="#">Account</a></li>
-                    <li><a href="#">Logout</a></li>
+                    <li><a href="logout.php">Logout</a></li>
                 </ul>
             </div>
             <div id="content">
@@ -23,7 +33,7 @@
                     </div>
                     <ul id="indicators">
                         <li id="indicator-E1" class="indicator">
-                            <a href="#">
+                            <a href="indicators.php?indicator=E1">
                                 <span class="indicator-number">E1</span>
                                 <span class="indicator-title">Number of direct beneficiary children provided education or vocational training services</span>
                             </a>

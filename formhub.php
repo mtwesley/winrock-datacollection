@@ -9,35 +9,6 @@ define('PASSWORD', 'Liberia123');
 define('ASC', 1);
 define('DESC', -1);
 
-$beneficiary_workplace_visit_form = array(
-  'Beneficiary_WorkplaceVisit_20140110',  
-);
-
-$child_enrollment_form = array(
-  'Child_Enrollment_Form_20140305',
-  'Child_Enrollment_Form_20140314'
-);
-
-$child_intake_form = array(
-  'Child_Intake_Form_20140321'
-);
-
-$child_monitoring_form = array(
-  'Child_Monitoring_Form_20140110'
-);
-
-$household_intake_form = array(
-  'Household_Intake_Form_20140110'
-);
-
-$household_monitoring_form = array(
-  'Household_Monitoring_Form_20140110'
-);
-
-$school_attendance_form = array(
-  'School_Attendance_Form_20140110'
-);
-
 function get_form_data($form, $query = array(), $fields = array(), $sort = null, $count = null, $start = null, $limit = null) {
   $username = USERNAME;
   $password = PASSWORD;
@@ -73,7 +44,7 @@ function get_form_data($form, $query = array(), $fields = array(), $sort = null,
     try {
         $request = Requests::get($uri, $headers, $options);
     } catch (Exception $e) {
-        die("Unable to make request to Formhub server. Please try again.");
+        die("Unable to make request to Formhub server. Please try again later.");
     }
     
     $data += (array) json_decode($request->body, true);
