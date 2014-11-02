@@ -201,9 +201,10 @@ body {
 #left .title img.icon,
 #full .title img.icon {
     height: 30px;
+    margin-right: 5px;
     position: relative;
     top: 7px;
-    margin-right: 5px;
+    right: 5px;
 }
 
 #right {

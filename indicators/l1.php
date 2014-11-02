@@ -22,7 +22,7 @@ function data() {
     
     $form_data = get_form_data(
         $child_intake_form, // form
-        array('child_educationstatus/school_type' => array('$in' => array('primary', 'jnr_secondary', 'ayp', 'formal'))), // query
+        array('child_educationstatus/school_type' => array('$in' => array('primary', 'jnr_secondary', 'formal'))), // query
         array('community_code', 'household_code', 'child_id', 'child_sex', 'child_age', 'child_wfcl_or_at_risk_status/child_labor'), // fields
         null, // sort
         false, // count
