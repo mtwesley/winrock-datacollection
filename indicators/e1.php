@@ -1,6 +1,7 @@
 <?php
 
-include_once 'formhub.php';
+// include_once 'formhub.php';
+include_once 'ona.php';
 include_once 'forms.php';
 
 function info() {
@@ -23,19 +24,19 @@ function data($values = array()) {
     global $child_intake_form;
     
     // setup date range
-    if ($values['date_range']) $dquery = array('date_visited' => $values['date_range']);
+    if ($values['date_range']) $dquery = array('visited_date' => $values['date_range']);
     else $dquery = array();
     
     // setup formhub helper parameters
-    $query = $dquery; // + array('child_educationstatus/school_type' => array('$in' => array('primary', 'jnr_secondary', 'ayp', 'formal')));
+    $query = $dquery + array('education/school_type' => array('$in' => array('primary', 'secondary', 'ayp', 'formal')));
     $fields = array(
         'date_visited',
         'community_code',
-        'household_code',
+        'household_id',
         'child_id',
         'child_sex',
         'child_age',
-        'child_wfcl_or_at_risk_status/child_labor'
+        'work/status'
     );
     $sort = null;
     $count = false;
@@ -64,8 +65,8 @@ function data($values = array()) {
         if ($child_age < 14) $under_14["$community_code-$household_code-$child_id"] = true;
         else $over_14["$community_code-$household_code-$child_id"] = true;
         
-        if ($data['child_wfcl_or_at_risk_status/child_labor'] == 'child_labor') $cl["$community_code-$household_code-$child_id"] = true;
-        else if ($data['child_wfcl_or_at_risk_status/child_labor'] == 'high_risk_child') $cahr["$community_code-$household_code-$child_id"] = true;
+        if ($data['work/status'] == 'cl') $cl["$community_code-$household_code-$child_id"] = true;
+        else if ($data['work_status'] == 'cahr') $cahr["$community_code-$household_code-$child_id"] = true;
     }
 
     // return organized result data

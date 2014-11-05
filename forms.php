@@ -1,31 +1,30 @@
 <?php
 
-$beneficiary_workplace_visit_form = array(
-  'Beneficiary_WorkplaceVisit_20140110',  
+$workplace_visit_form = array(
+  'WorkplaceVisit-2014-11-01'  
 );
 
 $child_enrollment_form = array(
-  'Child_Enrollment_Form_20140305',
-  'Child_Enrollment_Form_20140314'
+  'ChildEnrollment-2014-11-01'
 );
 
 $child_intake_form = array(
-  'Child_Intake_Form_20140321'
+  'ChildIntake-2014-11-01'
 );
 
 $child_monitoring_form = array(
-  'Child_Monitoring_Form_20140110'
+  'ChildMonitoring-2014-11-01'
 );
 
 $household_intake_form = array(
-  'Household_Intake_Form_20140110'
+  'HouseholdIntake-2014-11-01'
 );
 
 $household_monitoring_form = array(
-  'Household_Monitoring_Form_20140110'
+  'HouseholdMonitoring-2014-11-01'
 );
 
 $school_attendance_form = array(
-  'School_Attendance_Form_20140110'
+  'SchoolAttendance-2014-11-01'
 );
 
