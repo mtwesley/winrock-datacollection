@@ -7,7 +7,7 @@ include_once 'forms.php';
 function info() {
     // indicator info 
     return array(
-        'title' => 'Number of direct beneficiary children provided education or vocational training services',
+        'title' => 'Number of children engaged in or at high-risk of entering child labor enrolled in formal education services',
         'headers' => array(
             'total'    => 'Total',
             'male'     => 'Male',
@@ -28,7 +28,10 @@ function data($values = array()) {
     else $dquery = array();
     
     // setup formhub helper parameters
-    $query = $dquery + array('education/school_type' => array('$in' => array('primary', 'secondary', 'ayp', 'vocational')));
+    $query = $dquery + array(
+        'education/school_type' => array('$in' => array('primary', 'secondary', 'vocational')),
+        'work/status' => array('$in' => array('cl', 'cahr'))
+    );
     $fields = array(
         'date_visited',
         'community_code',

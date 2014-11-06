@@ -39,19 +39,19 @@ if (!$_SESSION['logged_in']) {
                             </a>
                         </li>
                         <li id="indicator-E2" class="indicator">
-                            <a href="#">
+                            <a href="indicators.php?indicator=E2">
                             <span class="indicator-number">E2</span>
                             <span class="indicator-title">Number of children engaged in or at high-risk of entering child labor enrolled in formal education services</span>
                             </a>
                         </li>
                         <li id="indicator-E3" class="indicator">
-                            <a href="#">
+                            <a href="indicators.php?indicator=E3">
                             <span class="indicator-number">E3</span>
                             <span class="indicator-title">Number of children engaged in or at high-risk of entering child labor enrolled in non-formal education services</span>
                             </a>
                         </li>
                         <li id="indicator-E4" class="indicator">
-                            <a href="#">
+                            <a href="indicators.php?indicator=E4">
                             <span class="indicator-number">E4</span>
                             <span class="indicator-title">Number of children engaged in or at high-risk of entering child labor enrolled in vocational services</span>
                             </a>
