@@ -103,43 +103,43 @@ if (!$_SESSION['logged_in']) {
                     </div>
                     <ul id="indicators">
                         <li id="indicator-A1" class="indicator">
-                            <a href="#">
+                            <a href="indicators.php?indicator=A1">
                             <span class="indicator-number">A1</span>
                             <span class="indicator-title">Percentage of children in Child Labor</span>
                             </a>
                         </li>
                         <li id="indicator-A2" class="indicator">
-                            <a href="#">
+                            <a href="indicators.php?indicator=A2">
                             <span class="indicator-number">A2</span>
                             <span class="indicator-title">Percentage of children in Worst Forms of Child Labor</span>
                             </a>
                         </li>
                         <li id="indicator-A3" class="indicator">
-                            <a href="#">
+                            <a href="indicators.php?indicator=A3">
                             <span class="indicator-number">A3</span>
                             <span class="indicator-title">Percentage of children under Hazardous Child Labor</span>
                             </a>
                         </li>
                         <li id="indicator-A4" class="indicator">
-                            <a href="#">
+                            <a href="indicators.php?indicator=A4">
                             <span class="indicator-number">A4</span>
                             <span class="indicator-title">Number of children engaged in any form of Child Labor during the past six months</span>
                             </a>
                         </li>
                         <li id="indicator-A5" class="indicator">
-                            <a href="#">
+                            <a href="indicators.php?indicator=A5">
                             <span class="indicator-number">A5</span>
                             <span class="indicator-title">Number of children that received any regular form of education during the past six months</span>
                             </a>
                         </li>
                         <li id="indicator-A6" class="indicator">
-                            <a href="#">
+                            <a href="indicators.php?indicator=A6">
                             <span class="indicator-number">A6</span>
                             <span class="indicator-title">Percentage of beneficiary children dropping out from formal school</span>
                             </a>
                         </li>
                         <li id="indicator-A7" class="indicator">
-                            <a href="#">
+                            <a href="indicators.php?indicator=A7">
                             <span class="indicator-number">A7</span>
                             <span class="indicator-title">Percentage of beneficiary children who complete the school year</span>
                             </a>
@@ -151,19 +151,19 @@ if (!$_SESSION['logged_in']) {
                             </a>
                         </li>
                         <li id="indicator-A9" class="indicator">
-                            <a href="#">
+                            <a href="indicators.php?indicator=A9">
                             <span class="indicator-number">A9</span>
                             <span class="indicator-title">Percentage of target households covered by social protection services</span>
                             </a>
                         </li>
                         <li id="indicator-A10" class="indicator">
-                            <a href="#">
+                            <a href="indicators.php?indicator=A10">
                             <span class="indicator-number">A10</span>
                             <span class="indicator-title">Percentage of target youth 16-17 years old that are self-employed or employed by third parties</span>
                             </a>
                         </li>
                         <li id="indicator-A11" class="indicator">
-                            <a href="#">
+                            <a href="indicators.php?indicator=A11">
                             <span class="indicator-number">A11</span>
                             <span class="indicator-title">Number of target households referred to existing government and non-government social protection programs</span>
                             </a>
