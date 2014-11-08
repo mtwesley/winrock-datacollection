@@ -38,7 +38,7 @@ function data($values = array()) {
         'child_age',
         'work/status'
     );
-    $sort = null;
+    $sort = array('date_visited' => '1');
     $count = false;
     $start = 0;
     $limit = 0;
@@ -47,6 +47,7 @@ function data($values = array()) {
     $form_data = get_form_data($child_intake_form, $query, $fields, $sort, $count, $start, $limit);
     
     // setup result parsing
+    $total = array();
     $male = array();
     $female = array();
     $under_14 = array();
@@ -57,16 +58,16 @@ function data($values = array()) {
     // parse result data
     foreach ($form_data as $data) {
         extract($data);
-        $total["$community_code-$household_code-$child_id"] = true;
+        $total["$community_code-$household_id-$child_id"] = true;
         
-        if ($child_sex == 'male') $male["$community_code-$household_code-$child_id"] = true;
-        else $female["$community_code-$household_code-$child_id"] = true;
+        if ($child_sex == 'male') $male["$community_code-$household_id-$child_id"] = true;
+        else $female["$community_code-$household_id-$child_id"] = true;
         
-        if ($child_age < 14) $under_14["$community_code-$household_code-$child_id"] = true;
-        else $over_14["$community_code-$household_code-$child_id"] = true;
+        if ($child_age < 14) $under_14["$community_code-$household_id-$child_id"] = true;
+        else $over_14["$community_code-$household_id-$child_id"] = true;
         
-        if ($data['work/status'] == 'cl') $cl["$community_code-$household_code-$child_id"] = true;
-        else if ($data['work_status'] == 'cahr') $cahr["$community_code-$household_code-$child_id"] = true;
+        if ($data['work/status'] == 'cl') $cl["$community_code-$household_id-$child_id"] = true;
+        else if ($data['work_status'] == 'cahr') $cahr["$community_code-$household_id-$child_id"] = true;
     }
 
     // return organized result data

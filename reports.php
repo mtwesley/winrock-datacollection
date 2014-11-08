@@ -65,7 +65,7 @@ if (!$_SESSION['logged_in']) {
                     </div>
                     <ul id="indicators">
                         <li id="indicator-L1" class="indicator">
-                            <a href="#">
+                            <a href="indicators.php?indicator=L1">
                             <span class="indicator-number">L1</span>
                             <span class="indicator-title">Number of households receiving livelihood services</span>
                             </a>

@@ -85,7 +85,7 @@ body {
     padding: 0;
     list-style: none;
     display: inline;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 #navigation li a,
@@ -195,7 +195,7 @@ body {
 }
 #full .title {
     display: inline;
-    font-size: 26px;
+    font-size: 23px;
 }
 
 #left .title img.icon,
