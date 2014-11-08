@@ -47,9 +47,12 @@ function data($values = array()) {
     // parse result data
     foreach ($form_data as $data) {
         extract($data);
-        $total["$community_code-$household_id-$child_id"] = true;
-        if ($data['is_working']) $is_working["$community_code-$household_id-$child_id"] = true;
-        else $other["$community_code-$household_id-$child_id"] = true;
+        $child_age = intval($child_age);
+        if ($child_age >= 16 and $child_age <= 17) {
+            $total["$community_code-$household_id-$child_id"] = true;
+            if ($data['is_working']) $is_working["$community_code-$household_id-$child_id"] = true;
+            else $other["$community_code-$household_id-$child_id"] = true;
+        }
     }
 
     // return organized result data

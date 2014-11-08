@@ -68,7 +68,7 @@ if ($indicator and file_exists("indicators/$indicator.php")) {
                             <?php elseif ($indicator_type == 'A'): ?><img class="icon" src="images/additional.png" />
                             <?php endif; ?>
                             -->
-                            <span class="indicator-number">E1</span>
+                            <span class="indicator-number"><?php echo $indicator; ?></span>
                             <?php echo $info['title']; ?>
                         </div>
                     </div>
