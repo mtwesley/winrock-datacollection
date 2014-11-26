@@ -28,7 +28,9 @@ function data($values = array()) {
     else $dquery = array();
     
     // setup formhub helper parameters
-    $query = $dquery + array('education/school_type' => array('$in' => array('primary', 'secondary', 'ayp', 'vocational')));
+    $query = $dquery + array(
+        'education/school_type' => array('$in' => array('primary', 'secondary', 'ayp', 'vocational'))
+    );
     $fields = array(
         'date_visited',
         'community_code',
