@@ -3,7 +3,7 @@
 include_once 'Requests.php';
 Requests::register_autoloader();
 
-define('AUTH_TOKEN', '28ab9322d08aa518a79000a62e36454953a0b50b');
+define('AUTH_TOKEN', 'e386875c22a0a11cb312671cb10acffe37713e00');
 
 define('ASC', 1);
 define('DESC', -1);
