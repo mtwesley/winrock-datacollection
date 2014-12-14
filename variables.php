@@ -25,7 +25,7 @@ $month = array(
   '7' => 'July',
   '8' => 'August',
   '9' => 'September',
-  '20' => 'October',
+  '10' => 'October',
   '11' => 'November',
   '12' => 'December',
 );
