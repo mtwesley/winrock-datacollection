@@ -35,6 +35,7 @@ function data($values = array()) {
     $fields = array(
         'date_visited',
         'community_code',
+        'other_community',
         'household_id',
         'child_id',
         'child_sex',
