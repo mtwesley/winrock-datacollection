@@ -3,6 +3,7 @@
 // include_once 'formhub.php';
 include_once 'ona.php';
 include_once 'forms.php';
+include_once 'functions.php';
 
 function info() {
     // indicator info 
