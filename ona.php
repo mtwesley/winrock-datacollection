@@ -61,7 +61,7 @@ function get_form_data($form, $query = array(), $fields = array(), $sort = null,
     try {
         $request = Requests::get($uri, $headers, $options);
     } catch (Exception $e) {
-        die("Unable to make request to Ona server. Please try again later.");
+        die("Problem while making request to Ona server. Please try again later.");
     }
     
     $data += (array) json_decode($request->body, true);

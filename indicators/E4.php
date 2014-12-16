@@ -21,19 +21,18 @@ function info() {
 }
 
 function data($values = array()) {
-    global $child_intake_form;
+    global $child_enrollment_form, $child_intake_form, $child_monitoring_form;
     
     // setup date range
     if ($values['date_range']) $dquery = array('visited_date' => $values['date_range']);
     else $dquery = array();
     
     // setup formhub helper parameters
-    $query = $dquery + array(
-        'education/school_type' => array('$in' => array('vocational'))
-    );
+    $query = $dquery + array('education/school_type' => array('$in' => array('mfs', 'tvet', 'osh')));
     $fields = array(
         'date_visited',
         'community_code',
+        'other_community_code',
         'household_id',
         'child_id',
         'child_sex',
@@ -45,11 +44,9 @@ function data($values = array()) {
     $start = 0;
     $limit = 0;
     
-    // use formhub helper to build and execute query and return results
-    $form_data = get_form_data($child_intake_form, $query, $fields, $sort, $count, $start, $limit);
-    
     // setup result parsing
     $total = array();
+    $status = array();
     $male = array();
     $female = array();
     $under_14 = array();
@@ -57,19 +54,59 @@ function data($values = array()) {
     $cl = array();
     $cahr = array();
     
-    // parse result data
-    foreach ($form_data as $data) {
+    $enrollment_data = get_form_data($child_enrollment_form, $query, $fields, $sort, $count, $start, $limit);
+    foreach ($enrollment_data as $data) {
         extract($data);
-        $total["$community_code-$household_id-$child_id"] = true;
         
-        if ($child_sex == 'male') $male["$community_code-$household_id-$child_id"] = true;
-        else $female["$community_code-$household_id-$child_id"] = true;
+        $community_code = or_other($data, 'community_code', 'other_community_code');
+        $work_status = $data['work/status'];
         
-        if ($child_age < 14) $under_14["$community_code-$household_id-$child_id"] = true;
-        else $over_14["$community_code-$household_id-$child_id"] = true;
+        $unique = "$community_code-$household_id-$child_id";
+        if (!array_key_exists($unique, $total)) {
+            $total[$unique] = true;
+
+            if ($child_sex == 'male') $male[$unique] = true;
+            else $female[$unique] = true;
+
+            if ($child_age < 14) $under_14[$unique] = true;
+            else $over_14[$unique] = true;
+        }
+    }
+
+    $monitoring_data = get_form_data($child_monitoring_form, $query, $fields, $sort, $count, $start, $limit);
+    foreach ($monitoring_data as $data) {
+        extract($data);
         
-        if ($data['work/status'] == 'cl') $cl["$community_code-$household_id-$child_id"] = true;
-        else if ($data['work_status'] == 'cahr') $cahr["$community_code-$household_id-$child_id"] = true;
+        $community_code = or_other($data, 'community_code', 'other_community_code');
+        $work_status = $data['work/status'];
+        
+        $unique = "$community_code-$household_id-$child_id";
+        if (!array_key_exists($unique, $status) and array_key_exists($unique, $total)) {
+            $status[$unique] = true;
+            
+            // update age from monitoring if possible
+            if ($child_age < 14) $under_14[$unique] = true;
+            else $over_14[$unique] = true;
+
+            if (in_array($work_status, array('cl', 'wfcl', 'hcl'))) $cl[$unique] = true;
+            else if ($work_status == 'cahr') $cahr[$unique] = true;
+        }
+    }
+
+    $intake_data = get_form_data($child_intake_form, $query, $fields, $sort, $count, $start, $limit);
+    foreach ($intake_data as $data) {
+        extract($data);
+        
+        $community_code = or_other($data, 'community_code', 'other_community_code');
+        $work_status = $data['work/status'];
+        
+        $unique = "$community_code-$household_id-$child_id";
+        if (!array_key_exists($unique, $status) and array_key_exists($unique, $total)) {
+            $status[$unique] = true;
+
+            if (in_array($work_status, array('cl', 'wfcl', 'hcl'))) $cl[$unique] = true;
+            else if ($work_status == 'cahr') $cahr[$unique] = true;
+        }
     }
 
     // return organized result data
@@ -83,4 +120,3 @@ function data($values = array()) {
         'cahr'     => count($cahr)
     );
 }
-

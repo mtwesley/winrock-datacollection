@@ -58,6 +58,7 @@ if (!$_SESSION['logged_in']) {
                         </li>
                     </ul>
                 </div>
+                <!--
                 <div id="left" class="green">
                     <div class="title">
                         <img class="icon" src="images/livelihood.png" />
@@ -170,6 +171,7 @@ if (!$_SESSION['logged_in']) {
                         </li>
                     </ul>
                 </div>
+                -->
 
                 <!--
                 <div id="right">
