@@ -3,13 +3,14 @@
 // include_once 'formhub.php';
 include_once 'ona.php';
 include_once 'forms.php';
+include_once 'functions.php';
 
 function info() {
     // indicator info 
     return array(
-        'title' => 'Number of children engaged in or at high-risk of entering child labor enrolled in non-formal education services',
+        'title' => 'Number of households receiving livelihood services',
         'headers' => array(
-            'total'    => 'Total',
+            'total' => 'Total',
         )
     );
 }
@@ -26,6 +27,7 @@ function data($values = array()) {
     $fields = array(
         'date_visited',
         'community_code',
+        'other_community_code',
         'household_id',
     );
     $sort = array('date_visited' => '1');
@@ -42,12 +44,18 @@ function data($values = array()) {
     // parse result data
     foreach ($form_data as $data) {
         extract($data);
-        $total["$community_code-$household_id"] = true;
+
+        $community_code = or_other($data, 'community_code', 'other_community_code');
+        
+        $unique = "$community_code-$household_id";
+        if (!array_key_exists($unique, $total)) {
+            $total[$unique] = true;
+        }
     }
 
     // return organized result data
     return array(
-        'total'    => count($total)
+        'total' => count($total)
     );
 }
 

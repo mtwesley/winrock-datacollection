@@ -74,7 +74,7 @@ function data($values = array()) {
         }
     }
     
-    $monitoring_data = get_form_data($child_monitoring_form, $query, $fields, $sort, $count, $start, $limit);
+    $monitoring_data = get_form_data($child_monitoring_form, array(), $fields, $sort, $count, $start, $limit);
     foreach ($monitoring_data as $data) {
         extract($data);
         
@@ -94,7 +94,7 @@ function data($values = array()) {
         }
     }
 
-    $intake_data = get_form_data($child_intake_form, $query, $fields, $sort, $count, $start, $limit);
+    $intake_data = get_form_data($child_intake_form, array(), $fields, $sort, $count, $start, $limit);
     foreach ($intake_data as $data) {
         extract($data);
         

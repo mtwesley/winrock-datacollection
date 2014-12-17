@@ -58,7 +58,6 @@ if (!$_SESSION['logged_in']) {
                         </li>
                     </ul>
                 </div>
-                <!--
                 <div id="left" class="green">
                     <div class="title">
                         <img class="icon" src="images/livelihood.png" />
@@ -72,31 +71,32 @@ if (!$_SESSION['logged_in']) {
                             </a>
                         </li>
                         <li id="indicator-L2" class="indicator">
-                            <a href="#">
+                            <a href="indicators.php?indicator=L2">
                             <span class="indicator-number">L2</span>
                             <span class="indicator-title">Number of adults (18 and over) provided with employment services</span>
                             </a>
                         </li>
                         <li id="indicator-L3" class="indicator">
-                            <a href="#">
+                            <a href="indicators.php?indicator=L3">
                             <span class="indicator-number">L3</span>
                             <span class="indicator-title">Number of children (16-17) provided with employment services</span>
                             </a>
                         </li>
                         <li id="indicator-L4" class="indicator">
-                            <a href="#">
+                            <a href="indicators.php?indicator=L4">
                             <span class="indicator-number">L4</span>
                             <span class="indicator-title">Number of individuals provided with economic strengthening services</span>
                             </a>
                         </li>
                         <li id="indicator-L5" class="indicator">
-                            <a href="#">
+                            <a href="indicators.php?indicator=L5">
                             <span class="indicator-number">L5</span>
                             <span class="indicator-title">Number of individuals provided with services other than employment and economic strengthening</span>
                             </a>
                         </li>
                     </ul>
                 </div>
+                <!--
                 <div id="left" class="purple">
                     <div class="title">
                         <img class="icon" src="images/additional.png" />
