@@ -96,7 +96,6 @@ if (!$_SESSION['logged_in']) {
                         </li>
                     </ul>
                 </div>
-                <!--
                 <div id="left" class="purple">
                     <div class="title">
                         <img class="icon" src="images/additional.png" />
@@ -146,7 +145,7 @@ if (!$_SESSION['logged_in']) {
                             </a>
                         </li>
                         <li id="indicator-A8" class="indicator">
-                            <a href="#">
+                            <a href="indicators.php?indicator=A8">
                             <span class="indicator-number">A8</span>
                             <span class="indicator-title">Percentage of households with increased sources of income</span>
                             </a>
@@ -171,7 +170,6 @@ if (!$_SESSION['logged_in']) {
                         </li>
                     </ul>
                 </div>
-                -->
 
                 <!--
                 <div id="right">

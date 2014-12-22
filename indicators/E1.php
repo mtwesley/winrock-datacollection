@@ -89,8 +89,8 @@ function data($values = array()) {
             if ($child_age < 14) $under_14[$unique] = true;
             else $over_14[$unique] = true;
             
-            if (in_array($work_status, array('cl', 'wfcl', 'hcl'))) $cl[$unique] = true;
-            else if ($work_status == 'cahr') $cahr[$unique] = true;
+            if ($work_status == 'cahr') $cahr[$unique] = true; 
+            else $cl[$unique] = true;
         }
     }
 
@@ -105,8 +105,8 @@ function data($values = array()) {
         if (!array_key_exists($unique, $status) and array_key_exists($unique, $total)) {
             $status[$unique] = true;
             
-            if (in_array($work_status, array('cl', 'wfcl', 'hcl'))) $cl[$unique] = true;
-            else if ($work_status == 'cahr') $cahr[$unique] = true;
+            if ($work_status == 'cahr') $cahr[$unique] = true; 
+            else $cl[$unique] = true;
         }
     }
     

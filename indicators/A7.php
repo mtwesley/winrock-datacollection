@@ -3,6 +3,7 @@
 // include_once 'formhub.php';
 include_once 'ona.php';
 include_once 'forms.php';
+include_once 'functions.php';
 
 function info() {
     // indicator info 
@@ -26,6 +27,7 @@ function data($values = array()) {
     $fields = array(
         'date_visited',
         'community_code',
+        'other_community_code',
         'household_id',
         'child_id',
         'children',
@@ -46,10 +48,23 @@ function data($values = array()) {
     // parse result data
     foreach ($form_data as $data) {
         extract($data);
-        foreach ($children as $child) if ($child['children/final_exam_date']) {
-            $total["$community_code-$household_id-$child_id"] = true;
-            if ($child['children/has_attended_final_exam']) $completed["$community_code-$household_id-$child_id"] = true;
-            else $other["$community_code-$household_id-$child_id"] = true;
+        
+        $community_code = or_other($data, 'community_code', 'other_community_code');
+        
+        foreach ($children as $c_data) {
+            $household_id = $c_data['children/household_id'];
+            $child_id = $c_data['children/child_id'];
+            
+            $final_exam_date = $c_data['children/final_exam_date'];
+            $has_attended_final_exam = $c_data['children/has_attended_final_exam'];
+            
+            $unique = "$community_code-$household_id-$child_id";
+            if ($final_exam_date) {
+                $total[$unique] = true;
+                
+                if ($has_attended_final_exam) $completed[$unique] = true;
+                else $other[$unique] = true;
+            }
         }
     }
 

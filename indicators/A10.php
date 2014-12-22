@@ -3,6 +3,7 @@
 // include_once 'formhub.php';
 include_once 'ona.php';
 include_once 'forms.php';
+include_once 'function.php';
 
 function info() {
     // indicator info 
@@ -15,17 +16,18 @@ function info() {
 }
 
 function data($values = array()) {
-    global $workplace_visit_form;
+    global $child_monitoring_form, $workplace_visit_form;
     
     // setup date range
     if ($values['date_range']) $dquery = array('visited_date' => $values['date_range']);
     else $dquery = array();
     
     // setup formhub helper parameters
-    $query = $dquery;
+    $query = $dquery + array('child_age' => array('$in' => array('16', '17')));
     $fields = array(
         'date_visited',
         'community_code',
+        'other_community_code',
         'household_id',
         'child_id',
         'child_age',
@@ -36,28 +38,38 @@ function data($values = array()) {
     $start = 0;
     $limit = 0;
     
-    // use formhub helper to build and execute query and return results
-    $form_data = get_form_data($workplace_visit_form, $query, $fields, $sort, $count, $start, $limit);
-    
-    // setup result parsing
     $total = array();
-    $is_working = array();
+    $working = array();
     $other = array();
     
-    // parse result data
-    foreach ($form_data as $data) {
+    $monitoring_data = get_form_data($child_monitoring_form, $query, $fields, $sort, $count, $start, $limit);
+    foreach ($monitoring_data as $data) {
         extract($data);
-        $child_age = intval($child_age);
-        if ($child_age >= 16 and $child_age <= 17) {
-            $total["$community_code-$household_id-$child_id"] = true;
-            if ($data['is_working']) $is_working["$community_code-$household_id-$child_id"] = true;
-            else $other["$community_code-$household_id-$child_id"] = true;
+        
+        $community_code = or_other($data, 'community_code', 'other_community_code');
+        
+        $unique = "$community_code-$household_id-$child_id";
+        if (!array_key_exists($unique, $total)) {
+            $total[$unique] = true;
+        }
+    }
+
+    
+    $workplace_data = get_form_data($workplace_visit_form, $query, $fields, $sort, $count, $start, $limit);
+    foreach ($workplace_data as $data) {
+        extract($data);
+        
+        $community_code = or_other($data, 'community_code', 'other_community_code');
+        
+        $unique = "$community_code-$household_id-$child_id";
+        if (array_key_exists($unique, $total) and $is_working == 'yes') {
+            $working[$unique] = true;
         }
     }
 
     // return organized result data
     return array(
-        'percentage' => (($total ? count($is_working) / count($total) : 0) * 100).'%'
+        'percentage' => (($total ? count($working) / count($total) : 0) * 100).'%'
     );
 }
 

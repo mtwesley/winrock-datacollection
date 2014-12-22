@@ -3,6 +3,7 @@
 // include_once 'formhub.php';
 include_once 'ona.php';
 include_once 'forms.php';
+include_once 'functions.php';
 
 function info() {
     // indicator info 
@@ -26,6 +27,7 @@ function data($values = array()) {
     $fields = array(
         'date_visited',
         'community_code',
+        'other_community_code',
         'household_id',
         'has_social_protection_services',
     );
@@ -45,9 +47,16 @@ function data($values = array()) {
     // parse result data
     foreach ($form_data as $data) {
         extract($data);
-        $total["$community_code-$household_id"] = true;
-        if ($data['has_social_protection_services']) $has_services["$community_code-$household_id"] = true;
-        else $other["$community_code-$household_id"] = true;
+        
+        $community_code = or_other($data, 'community_code', 'other_community_code');
+        
+        $unique = "$community_code-$household_id";
+        if (!array_key_exists($unique, $total)) {
+            $total[$unique] = true;
+            
+            if ($has_social_protection_services == 'yes') $has_services[$unique] = true;
+            else $other[$unique] = true;
+        }
     }
 
     // return organized result data
